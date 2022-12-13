@@ -2,7 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" />
-    <title>АВТОБІОГРАФІЯ НАТАЛІЇ ПРИСТАЙ</title>
+    <title>НАТАЛІЯ ПРИСТАЙ</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -23,6 +23,11 @@
     />
 
     <script src="https://use.fontawesome.com/11d9ee90c3.js"></script>
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/css/lightgallery.min.css"
+  />
   </head>
   <body>
     <div class="header">
@@ -36,7 +41,7 @@
             <a href="#lifehistory">ІСТОРІЯ ЖИТТЯ</a>
           </li>
           <li>
-            <a href="#posters">ПОСТЕРИ</a>
+            <a href="#portfolio">ПОРТФОЛІО</a>
           </li>
           <li>
             <a href="#socialmedia">КОРИСНІ ПОСИЛАННЯ</a>
@@ -48,6 +53,17 @@
       <h1>ПРИВІТ СВІТ(ЛО)</h1>
     </div>
     <div class="section" id="about">
+      <div class="container">
+
+        <div class="front side">
+          <div class="content"> <p> *наведи на мене*
+          </p> 
+          </div>
+        </div>
+
+
+          <div class="back side">
+            <div class="content">
             <h2>ПРО МЕНЕ:</h2>
             <ul><b>
               <li><b>ім'я:</b> Наталя</li>
@@ -56,9 +72,14 @@
               <li><b>тип особистості:</b> активіст(ENFP-A)</li>
               <li><b>статус:</b> студентка 3 курсу кафедри ГД ЛНАМ</li></b>
             </ul>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="section" id="lifehistory">
-      <h2>КОРОТКА ІСТОРІЯ ЖИТТЯ (від самого початку до сьогодення):</h2>
+      <div class="history">
+      <h2>КОРОТКА ІСТОРІЯ ЖИТТЯ:</h2>
       <p>
         Однієї весняної ночі зорі склалися так, що на світ з'явилась я, батьки
         вирішили назвати мене Наталя.<br />Все дитинство мої захоплення
@@ -68,16 +89,56 @@
         гуртожитку і пишу код до своєї вебсторінки:))))
       </p>
     </div>
+    </div>
 
-    <div class="section" id="posters">
-      <h2>МОЇ ПОСТЕРИ:</h2>
+    <div class="section" id="portfolio">
+      <h2>ПОРТФОЛІО:</h2>
+      
+      <div class="gallery" id="lightgallery">
 
-      <div class="post">
-        <img src="002.jpg" width="30%" /><img src="001.jpg" width="30%" /><img
-          src="003.jpg"
-          width="30%"
-        />
-      </div>
+        <div class="gallery-item">
+          <a href="444.jpg" target="_blank">
+            <img src="444.jpg" alt="блокнот-мерч для табору Спілка" />
+          </a>
+        </div>
+
+        
+          <div class="gallery-item">
+            <a href="001.jpg" target="_blank">
+              <img src="001.jpg" alt="постер для соціального проєкту" />
+            </a>
+          </div>
+
+          
+            <div class="gallery-item">
+              <a href="555.jpg" target="_blank">
+                <img src="555.jpg" alt="буклек про відомих джазових виконавців" />
+              </a>
+            </div>
+
+            
+              <div class="gallery-item">
+                <a href="002.jpg" target="_blank">
+                  <img src="002.jpg" alt="постер для табору Спілка" />
+                </a>
+              </div>
+
+              
+                <div class="gallery-item">
+                  <a href="666.jpg" target="_blank">
+                    <img src="666.jpg" alt="редизайн упаковки кускусу" />
+                  </a>
+                </div>
+
+                
+                  <div class="gallery-item">
+                    <a href="003.jpg" target="_blank">
+                      <img src="003.jpg" alt="постер для кав'ярні Альма" />
+                    </a>
+                  </div>
+                </div> 
+
+      
     </div>
     <div class="section" id="socialmedia">
      <h1>КОРИСНІ ПОСИЛАННЯ:</h1>
@@ -116,5 +177,21 @@
   </footer>
 
     <script src="script.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/menuspy@latest/dist/menuspy.min.js"></script>
+    <script>
+        var elm = document.querySelector(".header .menu");
+        var ms = new MenuSpy(elm, {
+          // threshold: 15,
+        });
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/lightgallery.min.js"></script>
+
+<script type="text/javascript">
+  lightGallery(document.getElementById("lightgallery"), {
+    selector: ".gallery-item a",
+  });
+</script>
   </body>
 </html>
