@@ -32,6 +32,7 @@
 
 
   <link rel="stylesheet" href="menu.css"/>
+  <link rel="stylesheet" href="mobile.css"/>
   </head>
   <body>
 
@@ -64,11 +65,7 @@
       
       <div class="container">
 
-        <div class="front side">
-          <div class="content"> <p> *наведи на мене*
-          </p> 
-          </div>
-        </div>
+        
 
 
           <div class="back side">
@@ -88,8 +85,35 @@
       </div>
 
     </div>
+
+
+
+
+    <div class="nc-main bg-cover bg-cc">
+
+      <div class="full-wh">
+      
+        <!-- STAR ANIMATION -->
+        <div class="bg-animation">
+          <div id='stars'></div>
+          <div id='stars2'></div>
+          <div id='stars3'></div>
+          <div id='stars4'></div>
+        </div><!-- / STAR ANIMATION -->
+
+      </div>
+  </div>
+
+
+
+
+
+
+
+
     <div class="section" id="lifehistory">
       <div class="history">
+
       <h2>КОРОТКА ІСТОРІЯ ЖИТТЯ:</h2>
       <p>
         Однієї весняної ночі зорі склалися так, що на світ з'явилась я, батьки
@@ -99,6 +123,7 @@
         що професія повинна бути пов'язана з творчістю, тому зараз я сиджу в
         гуртожитку і пишу код до своєї вебсторінки:))))
       </p>
+      
     </div>
     </div>
 
@@ -190,13 +215,29 @@
     <script src="script.js"></script>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/menuspy@latest/dist/menuspy.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/menuspy@latest/dist/menuspy.min.js"></script>
     <script>
-        var elm = document.querySelector(".header .menu");
-        var ms = new MenuSpy(elm, {
-          // threshold: 15,
+      const initMenuSpy = () => {
+        return new MenuSpy(document.querySelector(".header .menu"), {
+          // threshold: 60,
         });
-      </script>
+      };
+      let menuspy = initMenuSpy();
+
+      window.addEventListener("resize", () => {
+        menuspy.destroy();
+        menuspy = initMenuSpy();
+
+        if (window.location.hash) {
+          const sectionId = window.location.hash
+            ? window.location.hash
+            : "#top";
+          document.querySelector(sectionId)?.scrollIntoView(false);
+          window.location.replace = sectionId;
+          // console.log(sectionId);
+        }
+      });
+    </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/lightgallery.min.js"></script>
 
 <script type="text/javascript">

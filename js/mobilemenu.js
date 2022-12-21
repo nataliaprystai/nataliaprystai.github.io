@@ -1,3 +1,4 @@
+
 /*** Document Ready */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,6 +18,7 @@ function mobileMenu_show() {
 function mobileMenu_init() {
   if (mobileMenu_show()) {
     if (document.querySelector("#mobile-menu") == null) {
+      // звірте з вашим кодом (!)
       document.querySelector(".header .navbar").innerHTML +=
         '<div id="mobile-menu"><span></span><span></span><span></span></div>';
       mobileMenu_build();
@@ -27,6 +29,7 @@ function mobileMenu_init() {
           mobileMenu_toggle();
         });
 
+      // Аби меню закривалося при кліці виборі пункту
       document.querySelectorAll("#mobile-menu-content a").forEach((item) => {
         item.addEventListener("click", (event) => {
           document.getElementById("mobile-menu").classList.remove("open");
@@ -35,6 +38,16 @@ function mobileMenu_init() {
             .classList.remove("open");
         });
       });
+
+      // Аби меню закривалося при кліці по логотипу
+      document
+        .querySelector(".logo") // звірте з вашим кодом (!)
+        .addEventListener("click", function (event) {
+          document.getElementById("mobile-menu").classList.remove("open");
+          document
+            .getElementById("mobile-menu-content")
+            .classList.remove("open");
+        });
     }
   } else {
     mobileMenu_destroy();
@@ -50,7 +63,7 @@ function mobileMenu_build() {
   menu_content.appendChild(menu_content_overflow);
 
   let navigation_clone = document
-    .querySelector(".header .navbar > ul")
+    .querySelector(".header .navbar > ul") // звірте з вашим кодом (!)
     .cloneNode(true);
 
   navigation_clone.classList.remove("menu");

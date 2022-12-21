@@ -1,1 +1,19 @@
-@media screen and (max-width: px) { }
+@media (max-width: 660px) {
+  .gallery-item {
+    flex-basis: 100%;
+  }
+
+  
+  
+  h1{
+    font-size: 6em;
+  }
+  h2 {
+    font-size: 30pt;}
+    
+    #social-footer ul li {
+      font-size: 13vw;
+      padding: 0.15em;
+}
+      
+}
